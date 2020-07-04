@@ -1,0 +1,31 @@
+<div class="col-md-6 user-container">
+    <h2 style="margin: auto"> People List</h2>
+    <button class="btn btn-danger" style="width:100px" (click)="add()"> Add</button>
+</div>
+<div class="row">
+    <div class="col">
+        <div *ngIf="peoples.lenght == 0 " class="alert alert-warning">No people found </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let people of peoples">
+                    <!-- <td class="hidden"></td> -->
+                    <td>{{people.id}}</td>
+                    <td>{{people. FirstName}}</td>
+                    <td>{{people.LastName}}</td>
+                    <td>{{people.Phone}}</td>
+                    <td><button class="btn btn-success" (click)="deleteUser(people)"> Delete</button></td>
+                    <td><button class="btn btn-success" (click)="edit(people)" > Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
